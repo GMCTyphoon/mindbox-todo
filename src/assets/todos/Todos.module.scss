@@ -1,0 +1,129 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #ddd;
+  font-size: 48px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.toggleButton {
+  background: none;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+
+  &.collapsed {
+    transform: rotate(-90deg);
+  }
+}
+
+.input {
+  width: 100%;
+  border: none;
+  &::placeholder {
+    color: #ddd;
+  }
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+
+  &.completed {
+    .text {
+      color: #ddd;
+      text-decoration: line-through;
+    }
+  }
+}
+
+.checkbox {
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+
+  &:checked {
+    background: #5dc2af;
+    border-color: #5dc2af;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+    }
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: #777;
+  font-size: 14px;
+
+  button {
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 3px 7px;
+
+    &.active {
+      border: 1px solid #ebd7d7;
+      border-radius: 3px;
+    }
+  }
+}
+
+.clearCompleted {
+  color: #777;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.todoList {
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+
+  &.hidden {
+    max-height: 0;
+  }
+}
