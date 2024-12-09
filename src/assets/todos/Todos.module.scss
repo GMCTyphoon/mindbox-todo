@@ -12,7 +12,8 @@
   font-size: 48px;
   font-weight: 300;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .inputWrapper {
@@ -38,6 +39,7 @@
 .input {
   width: 100%;
   border: none;
+  outline: none;
   &::placeholder {
     color: #ddd;
   }
@@ -115,6 +117,11 @@
 
   &:hover {
     text-decoration: underline;
+  }
+  &:disabled,
+  [disabled] {
+    color: rgba(0, 0, 0, 0.1);
+    text-decoration: none;
   }
 }
 
